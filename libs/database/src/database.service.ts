@@ -13,6 +13,8 @@ export class DatabaseService implements OnModuleDestroy {
 
     this.pool = new Pool({ connectionString });
     this.db = drizzle(this.pool, { schema });
+
+    console.log('Database connected');
   }
 
   async onModuleDestroy() {
