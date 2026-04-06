@@ -13,6 +13,7 @@ export const KAFKA_TOPICS = {
   EVENT_CREATED: 'event.created',
   EVENT_UPDATED: 'event.updated',
   EVENT_CANCELLED: 'event.cancelled',
+  EVENT_PUBLISHED: 'event.published',
 
   // Ticket events
   TICKET_PURCHASED: 'ticket.purchased',
