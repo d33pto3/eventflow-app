@@ -48,9 +48,14 @@ export class AuthService {
       this.handleError(err);
     }
   }
+
   private handleError(error: any): never {
-    if (error.response) {
-      throw new HttpException(error.response.data, error.response.status);
+    const err = error as {
+      response?: { data: string | object; status: number };
+    };
+
+    if (err.response) {
+      throw new HttpException(err.response.data, err.response.status);
     }
 
     throw new HttpException('Something went wrong', 503);
