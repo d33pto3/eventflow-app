@@ -8,6 +8,7 @@ import {
   Request,
   UseGuards,
   ParseUUIDPipe,
+  Headers,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { EventsService } from './events.service';
@@ -36,7 +37,7 @@ export class EventsController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Post(':id')
+  @Post()
   create(
     @Body() createEventDto: CreateEventDto,
     @Request() req: { user: { userId: string; useRole: string } },

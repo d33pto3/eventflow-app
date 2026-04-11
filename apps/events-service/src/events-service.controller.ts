@@ -15,7 +15,7 @@ import { CreateEventDto, UpdateEventDto } from '@app/common';
 export class EventsServiceController {
   constructor(private readonly eventsServiceService: EventsServiceService) {}
 
-  @Post()
+  @Post('create')
   create(
     @Body() createEventDto: CreateEventDto,
     @Headers('x-user-id') userId: string,
@@ -53,7 +53,7 @@ export class EventsServiceController {
     );
   }
 
-  @Post(':id')
+  @Post(':id/publish')
   publish(
     @Param('id', ParseUUIDPipe) id: string,
     @Headers('x-user-id') userId: string,

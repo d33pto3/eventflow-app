@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { EventsServiceModule } from './events-service.module';
 import { SERVICES_PORTS } from '@app/common';

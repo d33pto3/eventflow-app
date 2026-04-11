@@ -5,9 +5,9 @@ import { firstValueFrom } from 'rxjs';
 
 @Injectable()
 export class EventsService {
-  private readonly eventServiceUrl = `htpp://localhosh:${SERVICES_PORTS.EVENTS_SERVICE}`;
+  private readonly eventServiceUrl = `http://localhost:${SERVICES_PORTS.EVENTS_SERVICE}`;
 
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly httpService: HttpService) { }
 
   async create(data: object, userId: string, userRole: string) {
     try {
